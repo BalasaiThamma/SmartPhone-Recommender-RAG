@@ -1,33 +1,34 @@
-# Smartphone Recommendation System
+# Mobile Phone Recommendation System using RAG
 
-A simple RAG-based smartphone recommendation system that uses semantic search to recommend mobile phones based on user queries.
-
-## Flow
-
-Dataset (CSV)
-→ Embeddings (BGE)
-→ ChromaDB (Vector Store)
-→ User Query
-→ Similarity Search
-→ Mobile Recommendations
+A Retrieval-Augmented Generation (RAG) based Mobile Phone Recommendation System that uses semantic search and local LLMs to recommend mobile phones based on user queries.
 
 ## Tech Stack
 
 - Python
+- FastAPI
 - ChromaDB
+- Ollama
+- Pandas
 - Sentence Transformers
+
+## LLM Models Used
+
+- Qwen2.5:0.5B
+- TinyLlama
+- SmolLM2:135M
+
+## Embedding Model
+
 - BAAI/bge-small-en-v1.5
 
-## Files
+## RAG Workflow
 
-- `ingest.py` – Creates embeddings and stores them in ChromaDB
-- `query.py` – Accepts user queries and retrieves relevant phones
-- `mobile_phones.csv` – Mobile phone dataset
+Dataset → Chunking → Embeddings → ChromaDB → Retrieval → LLM → Recommendation
 
-## Run
+## Dataset
 
-```bash
-python ingest.py
-python query.py
-Example Query
-Best Samsung phone under 30000
+- Kaggle Mobile Phones Dataset
+- 930 Mobile Phone Records
+
+
+uvicorn app:app --reload
