@@ -1,4 +1,4 @@
-# 📱 MobileRAG
+# Smartphone Recommendation System
 
 A simple RAG-based smartphone recommendation system that uses semantic search to recommend mobile phones based on user queries.
 
